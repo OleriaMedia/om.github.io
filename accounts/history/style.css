@@ -1,0 +1,146 @@
+:root {
+    --borderColor: rgba(0, 0, 0, 0.3);
+}
+
+body {
+    background-color: rgba(150, 150, 150, 0.075);
+}
+
+@keyframes loadingSpinner {
+    0% {
+        border-bottom-color: red;
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+    25% {
+        border-bottom-color: green;
+        transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+    50% {
+        border-bottom-color: blue;
+        transform: translate(-50%, -50%) rotateZ(720deg);
+    }
+    75% {
+        border-bottom-color: yellow;
+        transform: translate(-50%, -50%) rotateZ(1080deg);
+    }
+    100% {
+        border-bottom-color: red;
+        transform: translate(-50%, -50%) rotateZ(1440deg);
+    }
+}
+
+#loading-spinner {
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    border: 10px var(--borderColor) solid;
+    border-radius: 50%;
+    animation: loadingSpinner 8s cubic-bezier(0.7, 0, 0.3, 1) 0s infinite;
+    transition: opacity 0.3s;
+    z-index: 100;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 150px;
+
+}
+
+.toast {
+    text-align: right;
+    padding: 20px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    min-width: 340px;
+    width: 80%;
+    max-width: 500px;
+    height: 80px;
+    position: relative;
+    top: 0;
+    margin-bottom: 20px;
+    box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.2);
+}
+
+.toast::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+    background-color: green;
+}
+
+.toast-icon {
+    position: absolute;
+    top: 45%;
+    right: 22px;
+    width: 5px;
+    height: 5px;
+    padding: 7px;
+    display: inline-block;
+    background-color: green;
+    border-radius: 50%;
+}
+
+.toast-type {
+    color: #3e3e3e;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 15px;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-45%);
+}
+
+.toast-messege {
+    color: #878787;
+    font-size: 14px;
+    position: absolute;
+    top: 35%;
+    transform: translateY(40%);
+}
+
+.toast-content {
+    padding: 0 60px;
+}
+
+.toast-green .toast-icon {
+    background-color: #2bde3f;
+}
+
+.toast-green::before {
+    background-color: #2bde3f;
+}
+
+.toast-yellow .toast-icon {
+    background-color: #ffc007;
+}
+
+.toast-yellow::before {
+    background-color: #ffc007;
+}
+
+.toast-blue .toast-icon {
+    background-color: #0011ff;
+}
+
+.toast-blue::before {
+    background-color: #0011ff;
+}
+
+.toast-red .toast-icon {
+    background-color: #ff0000;
+}
+
+.toast-red::before {
+    background-color: #ff0000;
+}

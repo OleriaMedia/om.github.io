@@ -1,0 +1,123 @@
+body {
+    background-color: rgba(150, 150, 150, 0.075);
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 150px;
+}
+
+.toast {
+    text-align: right;
+    padding: 20px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    min-width: 340px;
+    width: 80%;
+    max-width: 500px;
+    height: 70px;
+    position: relative;
+    margin-bottom: 20px;
+    box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.9s;
+}
+
+.toast::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+    background-color: green;
+}
+
+.toast-icon {
+    position: absolute;
+    top: 45%;
+    right: 22px;
+    width: 5px;
+    height: 5px;
+    padding: 7px;
+    display: inline-block;
+    background-color: green;
+    border-radius: 50%;
+}
+
+.toast-type {
+    color: #3e3e3e;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 15px;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-45%);
+}
+
+.toast-messege {
+    color: #878787;
+    font-size: 14px;
+    position: absolute;
+    top: 35%;
+    transform: translateY(40%);
+}
+
+.toast-content {
+    padding: 0 60px;
+}
+
+.close-notification {
+    width: 100%;
+    height: 100%;
+}
+
+.toast-close {
+    position: absolute;
+    left: 44px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 26px;
+    height: 26px;
+    opacity: 0.39;
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+
+    .toast-close {
+        width: 35px;
+        height: 35px;
+    }
+
+}
+
+.toast-green .toast-icon {
+    background-color: #2bde3f;
+}
+
+.toast-green::before {
+    background-color: #2bde3f;
+}
+
+.toast-yellow .toast-icon {
+    background-color: #ffc007;
+}
+
+.toast-yellow::before {
+    background-color: #ffc007;
+}
+
+.toast-red .toast-icon {
+    background-color: #ff0000;
+}
+
+.toast-red::before {
+    background-color: #ff0000;
+}
